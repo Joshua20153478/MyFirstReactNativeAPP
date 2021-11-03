@@ -1,16 +1,16 @@
 import React from 'react'
 import { StyleSheet, TextInput, SafeAreaView } from 'react-native'
 
-const TextInputComponent = () => {
-    const [text, onChangeText] = React.useState("");
+const TextInputComponent = ({ SetValue }: { SetValue: any}) => {
+    //const [text, onChangeText] = React.useState("");
 
 return (
     <SafeAreaView style = {styles.TextInput}>
       <TextInput
         style={styles.TextInputText}
-        onChangeText={onChangeText}
-        value={text}
+        onChangeText={(SetNum) => SetValue(SetNum)}
         placeholder="Joshua"
+        
       />
 
     </SafeAreaView>
@@ -23,10 +23,7 @@ TextInputText:{
     fontSize:18,
     fontWeight: 'bold',
     textAlign:'center',
-    maxLength: 10,
     textAlignVertical:'center',
-    textShawColor: '#FF0000',
-
 },
 
 TextInput:{
